@@ -1,44 +1,39 @@
-# Currencies.jl
+# CryptoCurrencies.jl
 
-[![Build Status](https://travis-ci.org/JuliaFinance/Currencies.jl.svg?branch=master)](https://travis-ci.org/JuliaFinance/Currencies.jl)
-[![Build status](https://ci.appveyor.com/api/projects/status/chnj7xc6r0deux92/branch/master?svg=true)](https://ci.appveyor.com/project/EricForgy/currencies-jl/branch/master)
+[![Build Status](https://travis-ci.org/roshii/CryptoCurrencies.jl.svg?branch=master)](https://travis-ci.org/roshii/CryptoCurrencies.jl)
 
 ## Purpose
 
-This package provides standard currency names and codes.
+This package provides accepted cryptocurrency names and codes.
 
 ## Data Source
 
-Data for this package was obtained from https://datahub.io/core/country-codes.
+Data for this package was compiled manually and is not meant to be exhaustive.
+Please feel free to add any missing entries to the list.
 
 ## Usage
 
 ```julia
-julia> using Currencies; import Currencies: unit, name, code, USD, PHP, HKD, SGD
-julia> for ccy in [USD,PHP,HKD,SGD]
+julia> using CryptoCurrencies; import CryptoCurrencies: unit, name, BTC, LTC, XMR, ZEC
+julia> for ccy in [BTC,LTC,XMR,ZEC]
        println("Currency: $(ccy)")
        println("Name: $(name(ccy))")
-       println("Code: $(code(ccy))")
        println("Minor Unit: $(unit(ccy))\n")
        end
-       
-Currency: USD
-Name: US Dollar
-Code: 840
-Minor Unit: 2
 
-Currency: PHP
-Name: Philippine Piso
-Code: 608
-Minor Unit: 2
+Currency: BTC
+Name: Bitcoin
+Minor Unit: 8
 
-Currency: HKD
-Name: Hong Kong Dollar
-Code: 344
-Minor Unit: 2
+Currency: LTC
+Name: Litecoin
+Minor Unit: 8
 
-Currency: SGD
-Name: Singapore Dollar
-Code: 702
-Minor Unit: 2
+Currency: XMR
+Name: Monero
+Minor Unit: 8
+
+Currency: ZEC
+Name: Zcash
+Minor Unit: 8
 ```
