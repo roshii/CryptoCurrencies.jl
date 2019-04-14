@@ -24,7 +24,7 @@ for i in 1:nrow
     currency_units = split(string(data[i,2]),",")
     currency_names = split(data[i,3],",")
     for (currency,currency_unit,currency_name) in zip(currencies,currency_units,currency_names)
-        if (length(currency) == 3) & !isdefined(CryptoCurrencies,Symbol(currency))
+        if (length(currency) >= 3 && length(currency) <= 8) & !isdefined(CryptoCurrencies,Symbol(currency))
             @eval CryptoCurrencies begin
                 $(Symbol(currency)) = CryptoCurrency{Symbol($(currency))}()
                 unit(::CryptoCurrency{Symbol($(currency))}) = parse(Int,$(currency_unit))
