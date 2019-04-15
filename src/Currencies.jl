@@ -9,7 +9,7 @@ export Currency
 
 const (data,headers) = readdlm(joinpath(@__DIR__,"data","country-codes.csv"),',',header=true)
 
-struct Currency{T} 
+struct Currency{T}
     function Currency{T}() where T
         c = new()
         list[T] = c
@@ -36,5 +36,7 @@ for i in 1:nrow
         end
     end
 end
+
+include("Crypto.jl")
 
 end
